@@ -27,7 +27,7 @@ def nyc_pigeon_organizer(data)
     detail.each do |detail2, pigeons| #key= :purple, value = ["Theo", "Peter Jr", "Lucky"]
       pigeons.each do |pigeon|  # "Theo"
         if
-          new_hash[pigeon][attribute] << detail2
+          new_hash[pigeon][attribute] << detail2.to_s
         end
       end
     end
