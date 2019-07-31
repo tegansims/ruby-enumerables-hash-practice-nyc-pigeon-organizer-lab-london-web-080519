@@ -27,7 +27,7 @@ def nyc_pigeon_organizer(data)
   
   
   new_hash
-binding.pry
+#binding.pry
 end
 
 pigeon_data = {
@@ -87,4 +87,4 @@ pigeon_list = {
   }
 }
 
- nyc_pigeon_organizer(pigeon_data)
+ # nyc_pigeon_organizer(pigeon_data)
