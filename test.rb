@@ -23,13 +23,16 @@ def nyc_pigeon_organizer(data)
   
   # ----- NEXT UP: to look at each of the new_hash's keys, and add the values of the old hash (data)'s :color (potentially multiple). Then :gender, then :lives 
   
-  # new_hash.values[0].keys[0]    might be helpful. Returns the first :color from the first key of the new_hash
-  
-  # iterating through each pigeon name to get the pigeon color
-
-  
+   data.each do |attribute, detail| #color, puple
+    detail.each do |detail2, pigeons| #purple, names
+      pigeons.each do |pigeon|  #names array
+        if
+          pigeon_list[pigeon][attribute] << detail2.to_s
+        end
+      end
+    end
+  end
   new_hash
-binding.pry
 end
 
 pigeon_data = {
