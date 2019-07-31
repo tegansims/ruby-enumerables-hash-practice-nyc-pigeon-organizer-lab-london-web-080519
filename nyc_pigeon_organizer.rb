@@ -3,7 +3,7 @@ require 'pry'
 def nyc_pigeon_organizer(data)
   pigeon_list = {}
 
-  data.each do |attribute, detail| #color, puple
+  data.each do |attribute, detail| #key = :color, value = {purple=> ... "Alex"]}
     detail.each do |detail2, pigeons| #purple, names
       pigeons.each do |pigeon|  #names array]
       binding.pry
