@@ -26,9 +26,7 @@ def nyc_pigeon_organizer(data)
   # new_hash.values[0].keys[0]    might be helpful. Returns the first :color from the first key of the new_hash
   
   # iterating through each pigeon name to get the pigeon color
-  new_hash.keys.each { |name|
-    :color => name
-  }
+
   
   new_hash
 binding.pry
