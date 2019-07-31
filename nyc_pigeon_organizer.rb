@@ -27,7 +27,7 @@ def nyc_pigeon_organizer(data)
   
   # iterating through each pigeon name to get the pigeon color
   new_hash.keys.each { |name|
-    :color = {[name]}
+    :color = [name]
   }
   
   new_hash
