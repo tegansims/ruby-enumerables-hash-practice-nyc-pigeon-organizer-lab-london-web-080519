@@ -4,8 +4,8 @@ def nyc_pigeon_organizer(data)
   pigeon_list = {}
 
   data.each do |attribute, detail| #key = :color, value = {purple=> ... "Alex"]}
-    detail.each do |detail2, pigeons| #purple, names
-      pigeons.each do |pigeon|  #names array]
+    detail.each do |detail2, pigeons| #key= :purple, value = ["Theo", "Peter Jr", "Lucky"]
+      pigeons.each do |pigeon|  #names array
       binding.pry
         if !pigeon_list[pigeon]
           pigeon_list[pigeon] =
