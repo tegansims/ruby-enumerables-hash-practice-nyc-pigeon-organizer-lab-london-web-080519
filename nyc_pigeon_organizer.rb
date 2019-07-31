@@ -6,7 +6,6 @@ def nyc_pigeon_organizer(data)
   data.each do |attribute, detail| #key = :color, value = {purple=> ... "Alex"]}
     detail.each do |detail2, pigeons| #key= :purple, value = ["Theo", "Peter Jr", "Lucky"]
       pigeons.each do |pigeon|  # "Theo"
-      binding.pry
         if pigeon_list[pigeon] == nil
           pigeon_list[pigeon] = {
             :color => [], 
@@ -42,4 +41,4 @@ pigeon_data = {
   }
 }
 
-nyc_pigeon_organizer(pigeon_data)
+p nyc_pigeon_organizer(pigeon_data)
