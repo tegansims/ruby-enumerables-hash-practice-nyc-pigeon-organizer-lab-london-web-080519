@@ -7,9 +7,12 @@ def nyc_pigeon_organizer(data)
     detail.each do |detail2, pigeons| #key= :purple, value = ["Theo", "Peter Jr", "Lucky"]
       pigeons.each do |pigeon|  # "Theo"
       binding.pry
-        if !pigeon_list[pigeon]
-          pigeon_list[pigeon] =
-          {:color => [], :gender => [], :lives => []}
+        if pigeon_list[pigeon] == nil
+          pigeon_list[pigeon] = {
+            :color => [], 
+            :gender => [], 
+            :lives => []
+          }
         end
         if
           pigeon_list[pigeon][attribute] << detail2.to_s
