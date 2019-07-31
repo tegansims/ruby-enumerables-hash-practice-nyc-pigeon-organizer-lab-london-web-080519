@@ -1,25 +1,38 @@
 require 'pry'
 
 def nyc_pigeon_organizer(data)
-  pigeon_list = {}
-
+ 
+  new_hash = {}
+ 
+  # ------ getting unique pigeon names across the whole original hash ------ #
+  
+  x = 0 
+  pigeon_names = []
+  while x < data.values.length
+      pigeon_names << data.values[x].values.flatten
+      x += 1
+  end
+  pigeon_names.flatten.uniq.each do 
+    |name| new_hash[name] = {
+      :color => [],
+      :gender => [],
+      :lives => []
+      }
+    end
+  # --- ^^^ unique pigeon names have been found, and entered into a new hash ----- # 
+  
+  # ----- NEXT UP: to look at each of the new_hash's keys, and add the values of the old hash (data)'s :color (potentially multiple). Then :gender, then :lives 
+  
   data.each do |attribute, detail| #key = :color, value = {purple=> ... "Alex"]}
     detail.each do |detail2, pigeons| #key= :purple, value = ["Theo", "Peter Jr", "Lucky"]
       pigeons.each do |pigeon|  # "Theo"
-        if pigeon_list[pigeon] == nil
-          pigeon_list[pigeon] = {
-            :color => [], 
-            :gender => [], 
-            :lives => []
-          }
-        end
         if
-          pigeon_list[pigeon][attribute] << detail2.to_s
+          new_hash[pigeon][attribute] << detail2
         end
       end
     end
   end
-  pigeon_list
+  new_hash
 end
 
 pigeon_data = {
@@ -41,4 +54,40 @@ pigeon_data = {
   }
 }
 
-p nyc_pigeon_organizer(pigeon_data)
+pigeon_list = {
+  "Theo" => {
+    :color => ["purple", "grey"],
+    :gender => ["male"],
+    :lives => ["Subway"]
+  },
+  "Peter Jr." => {
+    :color => ["purple", "grey"],
+    :gender => ["male"],
+    :lives => ["Library"]
+  },
+  "Lucky" => {
+    :color => ["purple"],
+    :gender => ["male"],
+    :lives => ["Central Park"]
+  },
+  "Ms. K" => {
+    :color => ["grey", "white"],
+    :gender => ["female"],
+    :lives => ["Central Park"]
+  },
+  "Queenie" => {
+    :color => ["white", "brown"],
+    :gender => ["female"],
+    :lives => ["Subway"]
+  },
+  "Andrew" => {
+    :color => ["white"],
+    :gender => ["male"],
+    :lives => ["City Hall"]
+  },
+  "Alex" => {
+    :color => ["white", "brown"],
+    :gender => ["male"],
+    :lives => ["Central Park"]
+  }
+}
